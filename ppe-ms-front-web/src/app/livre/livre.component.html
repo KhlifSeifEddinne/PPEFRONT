@@ -1,0 +1,11 @@
+<p>Liste des livres</p>
+<table *ngIf="listCategories">
+    <tr>
+        <th>Code Catégorie</th>
+        <th>Désignation Catégorie</th>
+    </tr>
+    <tr *ngFor="let c of listCategories._embedded.categories">
+        <th>{{ c.codeCategorie }}</th>
+        <th>{{ c.designationCategorie }}</th>
+    </tr>
+</table>
