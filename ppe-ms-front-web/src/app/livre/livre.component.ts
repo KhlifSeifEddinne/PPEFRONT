@@ -11,6 +11,7 @@ export class LivreComponent implements OnInit {
 
   listLivres: any;
   listCategories: any;
+  categorieCourrante: any;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -26,6 +27,7 @@ export class LivreComponent implements OnInit {
 
   }
   public readLivre(idCategorie?: number) {
+    this.categorieCourrante = idCategorie;
     let url = "http://localhost:8080/livres";
     if (idCategorie) {
       url = `http://localhost:8080/categories/${idCategorie}/livres`

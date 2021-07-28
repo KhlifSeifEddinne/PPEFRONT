@@ -1,31 +1,32 @@
 <div class="container" *ngIf="listCategories">
     <div class="panel panel-primary">
         <div class="panel-heading">E-Livre</div>
-        <button class="btn btn-primary mr-3" (click)="readLivre()">Tout les livres</button>
+        <button class="btn btn-primary" (click)="readLivre()">Tout les
+            livres</button>
         <div class="panel-body">
             <span *ngFor="let c of listCategories._embedded.categories" class="mr-3">
-                <button class="btn btn-primary mr-3" (click)="readLivre(c.idCategorie)">{{ c.codeCategorie }}&nbsp;
+                <button (click)="readLivre(c.idCategorie)"
+                    [ngClass]="c.idCategorie==categorieCourrante?'btn btn-danger':'btn btn-primary'">{{ c.codeCategorie }}&nbsp;
                     {{c.designationCategorie }}</button>
             </span>
         </div>
+        <table class="table" *ngIf="listLivres && listLivres._embedded.livres.length>0">
+            <tr>
+                <th>Code</th>&nbsp;&nbsp;
+                <th>Designation</th>&nbsp;&nbsp;
+                <th>Nom</th>&nbsp;&nbsp;
+                <th>Photo</th>&nbsp;&nbsp;
+                <th>Prix</th>&nbsp;&nbsp;
+                <th>Quantité</th>&nbsp;&nbsp;
+            </tr>
+            <tr *ngFor="let l of listLivres._embedded.livres">
+                <td>{{ l.codeLivre }}</td>&nbsp; &nbsp;
+                <td>{{ l.designationLivre }}</td>&nbsp; &nbsp;
+                <td>{{ l.nomLivre }}</td>&nbsp; &nbsp;
+                <td>{{ l.photoLivre }}</td>&nbsp; &nbsp;
+                <td>{{ l.prixLivre }}</td>&nbsp; &nbsp;
+                <td>{{ l.quantiteLivre }}</td>&nbsp; &nbsp;
+            </tr>
+        </table>
     </div>
 </div>
-
-<table *ngIf="listLivres && listLivres._embedded.livres.length>0">
-    <tr>
-        <th>Code</th>&nbsp;&nbsp;
-        <th>Designation</th>&nbsp;&nbsp;
-        <th>Nom</th>&nbsp;&nbsp;
-        <th>Photo</th>&nbsp;&nbsp;
-        <th>Prix</th>&nbsp;&nbsp;
-        <th>Quantité</th>&nbsp;&nbsp;
-    </tr>
-    <tr *ngFor="let l of listLivres._embedded.livres">
-        <th>{{ l.codeLivre }}</th>&nbsp; &nbsp;
-        <th>{{ l.designationLivre }}</th>&nbsp; &nbsp;
-        <th>{{ l.nomLivre }}</th>&nbsp; &nbsp;
-        <th>{{ l.photoLivre }}</th>&nbsp; &nbsp;
-        <th>{{ l.prixLivre }}</th>&nbsp; &nbsp;
-        <th>{{ l.quantiteLivre }}</th>&nbsp; &nbsp;
-    </tr>
-</table>
