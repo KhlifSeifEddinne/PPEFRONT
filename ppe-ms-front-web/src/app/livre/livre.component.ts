@@ -10,6 +10,7 @@ import { error } from '@angular/compiler/src/util';
 export class LivreComponent implements OnInit {
 
   listLivres: any;
+  //ttLivres = { id: -1 };
   listCategories: any;
   categorieCourrante: any;
 
@@ -28,6 +29,7 @@ export class LivreComponent implements OnInit {
   }
   public readLivre(idCategorie?: number) {
     this.categorieCourrante = idCategorie;
+    //this.ttLivres = this.listLivres;
     let url = "http://localhost:8080/livres";
     if (idCategorie) {
       url = `http://localhost:8080/categories/${idCategorie}/livres`
