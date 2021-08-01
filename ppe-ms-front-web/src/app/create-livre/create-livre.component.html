@@ -1,0 +1,41 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Ajouter livre </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Code livre</label>
+            <input type="text" class="form-control" id="codeLivre" [(ngModel)]="livre.codeLivre" name="Code livre">
+        </div>
+
+        <div class="form-group">
+            <label> Designation livre</label>
+            <input type="text" class="form-control" id="designationLivre" [(ngModel)]="livre.designationLivre"
+                name="Designation livre">
+        </div>
+
+        <div class="form-group">
+            <label> Nom livre</label>
+            <input type="text" class="form-control" id="nomLivre" [(ngModel)]="livre.nomLivre" name="Nom livre">
+        </div>
+        <div class="form-group">
+            <label> Photo livre</label>
+            <input type="text" class="form-control" id="photoLivre" [(ngModel)]="livre.photoLivre" name="Photo livre">
+        </div>
+        <div class="form-group">
+            <label> Prix livre</label>
+            <input type="text" class="form-control" id="prixLivre" [(ngModel)]="livre.prixLivre" name="Prix livre">
+        </div>
+        <div class="form-group">
+            <label> Quantite livre</label>
+            <input type="text" class="form-control" id="quantiteLivre" [(ngModel)]="livre.quantiteLivre"
+                name="Quantite livre">
+        </div>
+        <div class="form-group">
+            <label> Categorie</label>
+            <input type="text" class="form-control" id="categorie" [(ngModel)]="livre.categorie" name="Categorie">
+        </div>
+
+        <button class="btn btn-success" type="submit">Ajouter</button>
+
+    </form>
+</div>

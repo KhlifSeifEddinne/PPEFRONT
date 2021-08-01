@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { error } from '@angular/compiler/src/util';
+import { LivreServiceService } from '../livre-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-livre',
@@ -14,7 +16,8 @@ export class LivreComponent implements OnInit {
   listCategories: any;
   categorieCourrante: any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private livreService: LivreServiceService,
+    private router: Router) { }
 
 
   ngOnInit(): void {
@@ -41,6 +44,17 @@ export class LivreComponent implements OnInit {
       }, error => {
         console.error(error);
       });
+  }
+  public updateLivre(id: number) {
+    this.router.navigate(['update-livre', id]);
+  }
+
+  public deleteLivre(id: number) {
+    this.livreService.deleteLivre(id).subscribe(data => {
+      console.log(data);
+      this.readLivre();
+
+    });
   }
 
 }

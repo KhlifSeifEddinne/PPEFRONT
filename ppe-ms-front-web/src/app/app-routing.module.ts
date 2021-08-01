@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-/*import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+import { LivreComponent } from './livre/livre.component';
+import { CreateLivreComponent } from './create-livre/create-livre.component';
+import { UpdateLivreComponent } from './update-livre/update-livre.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "login", component: LoginComponent },
-  { path: "home", component: HomeComponent }
-];*/
+  { path: '', component: LivreComponent },
+  { path: 'create-livre', component: CreateLivreComponent },
+  { path: 'update-livre/:id', component: UpdateLivreComponent }
+
+];
 
 @NgModule({
-  /*imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]*/
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

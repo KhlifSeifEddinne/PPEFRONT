@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LivreComponent } from './livre/livre.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateLivreComponent } from './create-livre/create-livre.component';
+import { UpdateLivreComponent } from './update-livre/update-livre.component';
 /*import { LoginComponent } from './login/login.component';
 import { RestapiService } from './restapi.service';
 import { HomeComponent } from './home/home.component';*/
@@ -14,6 +16,8 @@ import { HomeComponent } from './home/home.component';*/
   declarations: [
     AppComponent,
     LivreComponent,
+    CreateLivreComponent,
+    UpdateLivreComponent,
     /*LoginComponent,
     HomeComponent*/
   ],
