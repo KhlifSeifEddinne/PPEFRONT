@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Livre } from 'src/livre';
-import { LivreServiceService } from '../livre-service.service';
+import { LivreServiceService } from 'src/app/shared/livre-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Livre } from 'src/livre';
 import { Router } from '@angular/router';
-import { LivreServiceService } from '../livre-service.service';
+import { LivreServiceService } from 'src/app/shared/livre-service.service';
 
 @Component({
   selector: 'app-create-livre',
