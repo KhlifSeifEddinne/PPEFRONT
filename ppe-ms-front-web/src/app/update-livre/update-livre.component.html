@@ -18,10 +18,6 @@
             <input type="text" class="form-control" id="nomLivre" [(ngModel)]="livre.nomLivre" name="Nom livre">
         </div>
         <div class="form-group">
-            <label> Photo livre</label>
-            <input type="text" class="form-control" id="photoLivre" [(ngModel)]="livre.photoLivre" name="Photo livre">
-        </div>
-        <div class="form-group">
             <label> Prix livre</label>
             <input type="text" class="form-control" id="prixLivre" [(ngModel)]="livre.prixLivre" name="Prix livre">
         </div>
@@ -33,6 +29,45 @@
         <div class="form-group">
             <label> Categorie</label>
             <input type="text" class="form-control" id="categorie" [(ngModel)]="livre.categorie" name="Categorie">
+        </div>
+        <!--   <div class="form-group">
+            <label> Photo livre</label>
+            <input type="text" class="form-control" id="photoLivre" [(ngModel)]="livre.photoLivre" name="Photo livre">
+        </div> -->
+        <div class="container row">
+            <div class="col-md-12">
+                <h1>Upload Image</h1>
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col-md-6">
+                <input type="file" (change)="onFileChanged($event)">
+            </div>
+            <div class="col-md-6">
+                <input type="button" (click)="onUpload()" value="upload">
+            </div>
+        </div>
+        <hr />
+        <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=message>{{message}}</div>
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+                    name="name" />
+            </div>
+            <div class="col-md-6">
+                <input type="button" (click)="getImage()" value="Get Image">
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=retrievedImage>
+                    <img [src]="retrievedImage">
+                </div>
+            </div>
         </div>
 
         <button class="btn btn-success" type="submit">Modifier</button>
