@@ -19,6 +19,7 @@ export class LivreComponent implements OnInit {
   //ttLivres = { id: -1 };
   listCategories: any;
   categorieCourrante: any;
+  public currCategorie: any;
 
 
   constructor(private httpClient: HttpClient, private livreService: LivreServiceService,
@@ -33,13 +34,14 @@ export class LivreComponent implements OnInit {
       }, error => {
         console.error(error);
       });
-
   }
   public readLivre(idCategorie?: number) {
     this.categorieCourrante = idCategorie;
+    this.currCategorie = undefined;
     //this.ttLivres = this.listLivres;
     let url = "http://localhost:8080/livres";
     if (idCategorie) {
+      this.currCategorie = idCategorie;
       url = `http://localhost:8080/categories/${idCategorie}/livres`
     }
     this.httpClient.get(url)
@@ -62,12 +64,14 @@ export class LivreComponent implements OnInit {
      }); */
     this.dialogService.openConfirmDialog("Vous venez de supprimer ce livre, confirmer?")
       .afterClosed()
-      .subscribe(res => {
-        if (res) {
-          console.log(res);
-          this.livreService.deleteLivre(id);
+      .subscribe(async (res) => {
+        if (res == true) {
+          //console.log( res, id);
+          await this.livreService.deleteLivre(id).subscribe(res => {
+            this.readLivre(this.currCategorie);
+          });
           //this.notificationService.warn('! Deleted successfully');
-        } //this.readLivre();
+        }
       });
   }
 

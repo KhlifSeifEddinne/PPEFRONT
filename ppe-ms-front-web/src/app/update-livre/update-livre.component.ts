@@ -23,6 +23,7 @@ export class UpdateLivreComponent implements OnInit {
     }, error => console.log(error));
   }
   onSubmit() {
+    this.livre.categorie = `http://localhost:8080/categories/${this.livre.categorie}`;
     this.livreService.updateLivre(this.id, this.livre).subscribe(data => {
       this.goToLivreList();
     }

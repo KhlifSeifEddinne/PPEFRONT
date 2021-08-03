@@ -20,6 +20,7 @@ export class CreateLivreComponent implements OnInit {
     this.router.navigate(['/']);
   }
   saveLivre() {
+    this.livre.categorie = `http://localhost:8080/categories/${this.livre.categorie}`;
     this.livreService.createLivre(this.livre).subscribe(data => {
       console.log(data);
       this.goToLivreList();

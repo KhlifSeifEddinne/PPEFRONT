@@ -12,6 +12,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 import { MaterialModule } from './material/material.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
+
+
 //import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 /*import { LoginComponent } from './login/login.component';
@@ -36,6 +41,9 @@ import { HomeComponent } from './home/home.component';*/
     BrowserAnimationsModule,
     MaterialModule,
     MatDialogModule,
+    MatIconModule,
+    MatButtonModule
+
     /*MatSnackBar,
     MatSnackBarConfig*/
   ],
