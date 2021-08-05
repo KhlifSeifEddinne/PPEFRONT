@@ -14,6 +14,7 @@ import { MaterialModule } from './material/material.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 
 
 
@@ -29,7 +30,9 @@ import { HomeComponent } from './home/home.component';*/
     LivreComponent,
     CreateLivreComponent,
     UpdateLivreComponent,
-    MatConfirmDialogComponent
+    MatConfirmDialogComponent,
+    DropdownMenuComponent,
+
     /*LoginComponent,
     HomeComponent*/
   ],
