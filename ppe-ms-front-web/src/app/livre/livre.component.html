@@ -1,4 +1,9 @@
 <div class="container" *ngIf="listCategories">
+    <div class="input-group">
+        <input id="id_search" name="srch" #srch type="search" class="form-control rounded" placeholder="Chercher livre"
+            aria-label="Search" aria-describedby="search-addon" />
+        <button class="btn btn-primary" (click)="getLivreByName(srch.value)">Chercher</button>
+    </div>
     <div class="panel panel-primary">
         <div class="panel-heading">E-Livre</div>
         <button class="btn btn-primary" (click)="readLivre()">Tout les
@@ -13,9 +18,9 @@
         <table class="table" *ngIf="listLivres && listLivres._embedded.livres.length>0">
             <tr>
                 <th>Code</th>&nbsp;&nbsp;
-                <th>Designation</th>&nbsp;&nbsp;
-                <th>Nom</th>&nbsp;&nbsp;
                 <th>Photo</th>&nbsp;&nbsp;
+                <th>Nom</th>&nbsp;&nbsp;
+                <th>Designation</th>&nbsp;&nbsp;
                 <th>Prix</th>&nbsp;&nbsp;
                 <th>Quantité</th>&nbsp;&nbsp;
             </tr>

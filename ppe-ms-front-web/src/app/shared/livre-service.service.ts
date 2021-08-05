@@ -19,6 +19,10 @@ export class LivreServiceService {
     return this.httpClient.get<Livre>(`${this.baseURL}/${id}`);
   }
 
+  getLivreByName(name: string): Observable<Livre> {
+    return this.httpClient.get<Livre>(`http://localhost:8080/livres/search/byNom?mc=${name}`);
+  }
+
   createLivre(livre: Livre): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}`, livre);
   }

@@ -56,6 +56,15 @@ export class LivreComponent implements OnInit {
     this.router.navigate(['update-livre', id]);
   }
 
+  public getLivreByName(name: string) {
+    this.livreService.getLivreByName(name).subscribe(data => {
+      this.listLivres = data;
+      console.log(data);
+    }, error => {
+      console.error(error);
+    });
+  }
+
   public deleteLivre(id: number) {
     /*  this.livreService.deleteLivre(id).subscribe(data => {
        console.log(data);
